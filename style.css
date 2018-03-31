@@ -1,12 +1,25 @@
 body
 {
-	background-color: rgb(233, 233, 233);
+	background-color: rgb(236, 217, 198);
 	margin: 0px;
 	display: block;
 	font-family: 'Raleway', sans-serif;
 	min-width: 940px;
 }
 
+h1
+{
+	color: rgb(166, 129, 89);
+}
+
+.main_img
+{
+	position: relative;
+
+	margin-left: auto;
+	margin-right: auto;
+	width: 100vw;
+}
 
 /*---------------------------------------------*/
 /*                    BOX                      */
@@ -15,6 +28,7 @@ body
 .main
 {
 	background-color: rgb(255, 255, 255);
+	border-radius: 3px;
 	box-shadow: 0px 0px 10px black;
 	position: absolute;
 	width: 98%;
@@ -27,7 +41,7 @@ body
 
 .box
 {
-	border: 1px solid black;
+	border: 1px solid grey;
 	border-radius: 10px;
 	box-shadow: 0px 0px 5px black;
 	background-color: rgb(255, 255, 255);
@@ -52,6 +66,8 @@ body
 	margin-right: 2%;
 	width: 80%;
 	height: 900px;
+	overflow-y: auto;
+	overflow-x: hidden;
 }
 
 .article
@@ -59,7 +75,6 @@ body
 	float: left;
 	margin: 10px;
 	position: relative;
-	border: 1px solid black;
 	width: 150px;
 	height: 200px;
 	text-align: center;
@@ -70,44 +85,167 @@ body
 	margin-top: 8px;
 	margin-left: auto;
 	margin-right: auto;
+	margin-bottom: 2px;
 	width: 80%;
-	height: 80%;
+	height: 70%;
 }
+
 .article:hover
 {
-	background-color: #000;
-	z-index: 20;
+	background-color: rgb(210, 166, 121);
+	z-index: 5;
 }
+
 .price
 {
-	display: none;
-}
-.article:hower .name
-{
-	display: none;
-}
-.article:hower .price
-{
 	color: #FFF;
-	display: block;
 }
+
+.log
+{
+	position: relative;
+	margin-top: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 300px;
+	height: fixed;
+	text-align: center;
+    justify-content: center;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    line-height: 30px;
+}
+
+input[type="submit"]
+{
+	position: relative;
+	width: 75%;
+}
+
 /*---------------------------------------------*/
 /*                   HEADER                    */
 /*---------------------------------------------*/
+
+.effects {
+	transition: 0.5s;
+	-webkit-transition: 0.5s;
+	-moz-transition: 0.5s;
+}
+
+.deroulant .hidden .link a, .deroulant .hidden .link, .linkmenu{
+	transition: 0.5s;
+	-webkit-transition: 0.5s;
+	-moz-transition: 0.5s;
+}
+
+.bandeau {
+	width: 100%;
+}
+
+.perso {
+	cursor: pointer;
+	background-color: rgba(255, 235, 204, 0.8);
+	margin: auto;
+}
+.perso .link
+{
+		padding: 36px 0px;
+}
+.perso .deroulant .hidden
+{
+	
+}
+.deroulant {
+	width: 8%;
+	min-width: max-content;
+	float: right;
+	text-align: center;
+	display: block;
+	padding-top: 5px;
+	padding-bottom: 5px;
+
+}
+.deroulant:hover
+{
+	background-color: rgba(128, 77, 0, 0.8);
+}
+
+.deroulant:hover a{
+	color: #FFF;
+}
+
+.deroulant .hidden {
+	display: none;
+	position: absolute;
+	width: max-content;
+	z-index: 1;
+	width: 8%;
+	font-size: 10pt;
+}
+
+.deroulant .hidden .link a{
+	color: black;
+}
+
+.deroulant .hidden .link:hover a{
+	color: white;
+}
+
+.deroulant .hidden .link{
+	padding: 20px;
+	width: 100%;
+	background-color: rgb(128, 77, 0);
+	cursor: pointer;
+
+}
+
+.deroulant .hidden .link:hover {
+	background-color: rgba(128, 77, 0, 0.8);
+}
+
+.deroulant:hover .hidden {
+	display: block;
+
+}
+
+.menu {
+	margin: auto;
+	width: max-content;
+	display: block;
+}
+
+.linkmenu {
+	margin-top: -2px;
+}
+
+.link
+{
+	padding: 40% 0px;
+}
+
+.left {
+	float: none;
+	margin: auto;
+	display: inline-block;
+	padding: 0px 20px;
+	height: 100% !important;
+}
+
+.left a {
+	margin-top: 20px;
+	display: inline;
+}
+
+.leftlink {
+	margin-left: -20px;
+}
 
 header
 {
 	width: 100%;
 	height: 90px;
 	background-color: rgb(255, 255, 255);
-/*	background-color: rgb(0, 43, 128);
-*/	box-shadow: 0px 0px 10px black;
-}
-
-nav
-{
-	position: relative;
-	width: 100%;
+	box-shadow: 0px 0px 10px black;
 }
 
 a
@@ -116,98 +254,50 @@ a
 	color: rgb(123, 123, 123);
 }
 
-nav a
-{
-	border: 1px solid rgb(180, 180, 180);
-	display: inline-block;
-}
-
-li
-{
-	list-style-type: none;
-}
-
 a:hover
 {
 	color: #FFF;
 }
 
-nav > ul::after
+#login
 {
-	content: "";
-	display: block;
-	clear: both;
-}
-
-nav > ul > li
-{
-	float: left;
-	position: relative;
-}
-
-nav > ul > li > a
-{
-	padding: 10px 20px;
-	color: #000;
-}
-
-nav li:hover .sublist
-{
-	display: inline-block;
 	position: absolute;
-	top: 100%;
-	padding: 0px;
-}
-
-.sublist
-{
-	display: none;
-}
-.sublist li a
-{
-	padding: 15px 40px;
-	z-index: 20;
-	background-color: rgb(200, 200, 200);
-	width: 100px;
-	overflow: auto;
-	text-align: center;
-}
-
-.sublist li a:hover
-{
-	background-color: rgb(100, 100, 100);
-}
-
-.cat_1:hover
-{
-	background-color: rgb(100, 100, 100);
-	z-index: 15;
-
+	left: 150px;
+	top: 50px;
+	color: black;
+	font-size: 14pt;
+	z-index: 3;
 }
 
 #logo
 {
-	width: 140px;
+	left: 30px;
+	width: 90px;
 	height: 90px;
 	position: absolute;
-	z-index: 25;
+	z-index: 3;
 }
 
-#menu
+#button
 {
-	position: relative;
-	top: 50px;
-		padding-left: 140px;
-	z-index: 1;
+	background: rgb(236, 217, 198);
+	font-size: 14pt;
+	color: #fff;
+	height: 40px;
+	border: 1px solid #eee;
+	border-radius: 10px;
+	box-shadow: 5px 5px 5px #eee;
+	text-shadow:none;
 }
 
-#perso
-{
-	z-index: 100;
-	float: right;
-	padding-left: 0px;
-	margin: 0px;
-	background-color: rgb(100, 100, 100);
+#button:hover {
+	background: rgb(57, 38, 19);
+	color: #fff;
+	border: 1px solid #eee;
+	box-shadow: 5px 5px 5px #eee;
+	text-shadow:none;
+	cursor: pointer;
+
 }
 
 /*---------------------------------------------*/

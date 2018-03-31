@@ -26,17 +26,21 @@
 		</form>
 	</div>
 
-	<div class="central box">
-		<div class="article"><img class="img_product" src="../img/logo.png">
-			<div class="name">Article 1</div>
-			<div class="price">50$</div>
-		</div>
-		<div class="article">Article 1</div>
-		<div class="article">Article 1</div>
-		<div class="article">Article 1</div>
-		<div class="article">Article 1</div>
 
-	</div>
+	<div class="central box">
+	<?php
+	$i = 0;
+	while ($i < 100)
+	{
+		?>
+		<div class="article box"><img class="img_product" src="../img/logo.png">
+			<div class="name"><?php echo "Article"?></div>
+			<div class="price"><?php echo "50$"?></div>
+		</div>
+		<?php
+		$i++;
+	}
+?>
 </div>
 <?php include('../static/footer.html'); ?>
 </body>
