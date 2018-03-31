@@ -4,7 +4,7 @@
 	<title>Inscription</title>
 	<link rel="stylesheet" type="text/css" href="http://192.168.99.100:8100/php_rush00/style.css">
 </head>
-<?php include('../static/header.php') ?>
+<?php include('../static/header.php'); ?>
 
 <body>
 	<form method="post" action="create.php">

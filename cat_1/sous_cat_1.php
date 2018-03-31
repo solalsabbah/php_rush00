@@ -2,10 +2,10 @@
 <head>
 	<meta charset="utf-8" />
 	<title>Site e-Commerce</title>
-	<link rel="stylesheet" type="text/css" href="./style.css">
+	<link rel="stylesheet" type="text/css" href="http://192.168.99.100:8100/php_rush00/style.css">
 </head>
 <body>
-<?php include('./static/header.php'); ?>
+<?php include('../static/header.php'); ?>
 <div class="main">
 	<div class="criteria box">
 		<form>
@@ -25,10 +25,19 @@
 		   </p>
 		</form>
 	</div>
+
 	<div class="central box">
+		<div class="article"><img class="img_product" src="../img/logo.png">
+			<div class="name">Article 1</div>
+			<div class="price">50$</div>
+		</div>
 		<div class="article">Article 1</div>
+		<div class="article">Article 1</div>
+		<div class="article">Article 1</div>
+		<div class="article">Article 1</div>
+
 	</div>
 </div>
-<?php include('./static/footer.html'); ?>
+<?php include('../static/footer.html'); ?>
 </body>
 </html>
