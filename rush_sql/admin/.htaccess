@@ -1,0 +1,6 @@
+Deny from all
+
+AuthName "Page d'administration protégée"
+AuthType Basic
+AuthUserFile "/Users/ssabbah/Desktop/rush00/admin/.htpasswd"
+Require valid-user
