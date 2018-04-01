@@ -43,7 +43,7 @@ body
 		<br>
 		<br>
 		Category : 
-		<SELECT name="category">  <!-- regarder la base de donne et verifier en fonction du catalogue et creer. Include du code PHP-->
+		<SELECT name="category"> 
 
 				<OPTION  value="Basket" /> Basket </OPTION>
 				<OPTION  value="Soiree" /> Soiree </OPTION>
@@ -57,17 +57,6 @@ body
 		<br>
 		<br>
 		
-<!--	<form method="post" enctype="multipart/form-data">
-		 <div>
-		   <label for="file">Sélectionner le fichier à envoyer</label>
-			   <input type="file" id="file" name="file" multiple>
-			 </div>
-			 <div>
- 		  <button>Envoyer</button>
-	 </div>
-</form>
-
--->
 
 
 		<input type="submit" name="submit" value="OK" />

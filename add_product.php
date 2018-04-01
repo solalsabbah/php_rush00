@@ -1,4 +1,4 @@
-<?PHP include('admin/config.php');
+<?PHP include('config.php');
 
 $db = "rush00";
 
@@ -23,23 +23,6 @@ if ($_POST['submit'] == "OK")
 	else
 		header('location: new_prod.php?addproduct=fail');
 }
-
-/*
-if ($ok == 1)
-{
-	/////  ADD DATA TO THE CSV ////  if the product is ok 
-
-	$new_prod = array($_POST['name'], $_POST['price'], $_POST['colour'], $_POST['quantity'], $_POST['sexe'], $_POST['path_img']);
-
-	if (($handle = fopen("catalogue.csv", "a")) !== "FALSE")
-	{
-		fputcsv($handle, $new_prod);
-		//	echo "csv added\n";
-	}
-
-	/////////////////////////////
-}*/
-
 
 ///// ADD DATA TO SQL TABLLE ////////
 

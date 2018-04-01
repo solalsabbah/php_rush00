@@ -26,7 +26,7 @@ if (!mysqli_select_db($serv, $db)) // use select to verify existence of DB
 }
 
 
-mysqli_select_db($serv, "$db"); // use select to create a table
+mysqli_select_db($serv, "$db"); // use select to create a database
 
 
 if ($result = mysqli_query($serv, "SELECT DATABASE()")) 
@@ -62,7 +62,7 @@ while ($row = fgetcsv($handle))
 	foreach ($header as $i => $col)
 		$arr[$col] = $row[$i];
 	print_r($arr);
-//	echo $arr['id_client']."\n";
+	//	echo $arr['id_client']."\n";
 	$val = "INSERT INTO PRODUCTS(name, price, colour, quantity, sexe, category, path_img)
 		VALUES(\"{$arr['name']}\", \"{$arr['price']}\", \"{$arr['colour']}\",  \"{$arr['quantity']}\", \"{$arr['sexe']}\", \"{$arr['category']}\", \"{$arr['path_img']}\")";
 
@@ -72,13 +72,19 @@ while ($row = fgetcsv($handle))
 	else {
 		echo "Error: " . mysqli_error($serv);
 	}
- 	$data[] = $arr;
+	$data[] = $arr;
 }
+////////////// CREATE PANIER /////////////////
+$db = "rush00";
+
+mysqli_select_db($serv, $db);
+
+$cont = "CREATE TABLE PANIER( id_product INT NOT NULL AUTO_INCREMENT, name VARCHAR(255) NOT NULL, price INT NOT NULL, quantity INT NOT NULL, sexe ENUM('M', 'F', 'A') NOT NULL, PRIMARY KEY (id_product));";
 
 
-//mysqli_fetch_assoc();
-//print_r($data);
-
-//////////////////////////////////////
-
+	if(mysqli_query($serv, $cont)){
+		echo "Table created successfully\n";
+	} else {
+		echo "Table is not created\n";
+	}
 ?>
