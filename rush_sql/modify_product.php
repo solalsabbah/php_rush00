@@ -88,12 +88,4 @@ if (preg_match("#^[0-9]{1,8}$#", $_POST['id_product']) && $_POST['submit'] == "O
 	else
 		header('location: modify_product.php?answer=fail');
 }
-
-/////////////////////////////////////////////////////////////////////////////////
-
-
-
-
-
-
 ?>
