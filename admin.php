@@ -4,7 +4,7 @@ function del_usr()
 {
 	if (isset($_GET["del_user"]) && $_GET["login"] && $_GET["login"] != "")
 	{
-		$content = file_get_contents("../private/passwd");
+		$content = file_get_contents("./private/passwd");
 		$final = unserialize($content);
 		 foreach ($final as $key => $value) {
 		 	if ($value["login"] === $_GET["login"])
@@ -14,7 +14,7 @@ function del_usr()
 		 	}
 		 }
 		 $seria = serialize($final);
-		 file_put_contents("../private/passwd", $seria);
+		 file_put_contents("./private/passwd", $seria);
 		 header("Location: admin.php");
 	}
 }
@@ -23,7 +23,7 @@ function check_opt()
 {
 	if ((isset($_POST) && isset($_POST['opt']) && $_POST['opt'] === "users") || isset($_GET))
 	{
-		if (($content = file_get_contents("../private/passwd")) && ($unserialize = unserialize($content)))
+		if (($content = file_get_contents("./private/passwd")) && ($unserialize = unserialize($content)))
 		{
 			?>
 			<div class="tab_user box">
