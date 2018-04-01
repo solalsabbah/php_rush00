@@ -6,7 +6,9 @@
 </head>
 <body>
 
-<?php session_start() ; include('./static/header.php'); ?>
+<?php
+define("_PATH_", "./");
+include(_PATH_.'/static/header.php'); ?>
 <img src="./img/main_img.jpg" class="main_img"/>
 <?php include('./static/footer.html'); ?>
 </body>

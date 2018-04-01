@@ -5,7 +5,9 @@
 	<link rel="stylesheet" type="text/css" href="http://192.168.99.100:8100/php_rush00/style.css">
 </head>
 <body>
-<?php include('../static/header.php'); session_start() ?>
+<?php
+define("_PATH_", "../");
+include(_PATH_.'/static/header.php'); ?>
 	<div class="box log">
 		<h1>Connexion</h1>
 		<br />
@@ -14,10 +16,10 @@
 			<input type="text" name="login" <?= (isset(array_keys($_GET)[0]) AND (array_keys($_GET)[0] == "erreurconnexion" OR array_keys($_GET)[0] == "error"))?"style='background-color: rgba(255, 0, 0, 0.5);' placeholder='Erreur de Connexion.'":"" ?>/>
 			<br />
 			Mot de passe:<br />
-			<input type="text" name="passwd" />
+			<input type="password" class="effects" name="passwd" />
 			<br />
 			<br />
-			<input type="submit" id="button" name="submit" value="Valider" />
+			<input type="submit" class="effects" id="button" name="submit" value="Valider" />
 		</form>
 	</div>
 	<?php include('../static/footer.html'); ?>

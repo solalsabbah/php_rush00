@@ -25,6 +25,7 @@ h1
 /*                    BOX                      */
 /*---------------------------------------------*/
 
+/*----CAT----*/
 .main
 {
 	background-color: rgb(255, 255, 255);
@@ -116,10 +117,72 @@ h1
     line-height: 30px;
 }
 
-input[type="submit"]
+.log input[type="submit"]
 {
 	position: relative;
 	width: 75%;
+}
+
+/*---------------------------------------------*/
+/*                    ADMIN                    */
+/*---------------------------------------------*/
+
+.admin
+{
+	margin: auto;
+	width: 60%;
+	height: 55%
+}
+
+
+.tab_user
+{
+	position: relative;
+	margin: 50px auto;
+	width: 50%;
+	height: 50%;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+.line
+{
+	position: relative;
+	width: 90%;
+	height: 50px;
+	border: 1px solid black;
+	margin: 10px auto;
+	padding-top: 5px;
+	text-align: center;
+}
+
+.title_adm
+{
+	margin-left: 50px;
+}
+
+.form_adm
+{
+	text-align: center;
+}
+
+/*---------------------------------------------*/
+/*                    USER                     */
+/*---------------------------------------------*/
+
+.but_acc
+{
+	margin-top: 20px;
+}
+
+#title_account 
+{
+	font-size: 15pt;
+}
+
+.del_ac:hover
+{
+	background-color: rgb(255, 77, 77) !important;
 }
 
 /*---------------------------------------------*/
@@ -149,7 +212,7 @@ input[type="submit"]
 }
 .perso .link
 {
-		padding: 36px 0px;
+	padding: 36px 0px;
 }
 .perso .deroulant .hidden
 {

@@ -6,10 +6,7 @@
 		if (!file_exists("../private/passwd"))
 			file_put_contents("../private/passwd", NULL);
 	}
-
 	create_foldpasswd();
-		session_start();
-
 	$login_def = isset($_POST["login"]);
 	if ($login_def && ($content = file_get_contents("../private/passwd")))
 	{
@@ -24,7 +21,9 @@
 	}
 	if ($login_def && isset($_POST["passwd"]) && $_POST["passwd"] != "")
 	{
-		$to_compr["login"] = $_POST["login"];
+		// $login = mysql_real_escape_string($_POST["login"]);              !!!! DELETE THE // if we are on SQL
+		// $to_compr["login"] = $login;
+		$to_compr["login"] = $_POST["login"];										//And remove this line
 		$to_compr["passwd"] = hash("whirlpool", $_POST["passwd"]);
 		$final[] = $to_compr;
 		$seria = serialize($final);
