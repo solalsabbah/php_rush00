@@ -38,7 +38,7 @@ if ($result = mysqli_query($serv, "SELECT DATABASE()"))
 
 /// ELEMENTS PRODUITS /// 
 
-$products = "CREATE TABLE PRODUCTS( id_client INT NOT NULL AUTO_INCREMENT, name VARCHAR(255) NOT NULL, price INT NOT NULL, colour VARCHAR(255) NOT NULL, quantity INT NOT NULL, sexe ENUM('M', 'F', 'A') NOT NULL, path_img VARCHAR(50), PRIMARY KEY (id_client));";
+$products = "CREATE TABLE PRODUCTS( id_product INT NOT NULL AUTO_INCREMENT, name VARCHAR(255) NOT NULL, price INT NOT NULL, colour VARCHAR(255) NOT NULL, quantity INT NOT NULL, sexe ENUM('M', 'F', 'A') NOT NULL, category VARCHAR(255) NOT NULL, path_img VARCHAR(50), PRIMARY KEY (id_product));";
 
 
 if(mysqli_query($serv, $products)){  
@@ -63,8 +63,8 @@ while ($row = fgetcsv($handle))
 		$arr[$col] = $row[$i];
 	print_r($arr);
 //	echo $arr['id_client']."\n";
-	$val = "INSERT INTO PRODUCTS(name, price, colour, quantity, sexe, path_img)
-		VALUES(\"{$arr['name']}\", \"{$arr['price']}\", \"{$arr['colour']}\",  \"{$arr['quantity']}\", \"{$arr['sexe']}\", \"{$arr['path_img']}\")";
+	$val = "INSERT INTO PRODUCTS(name, price, colour, quantity, sexe, category, path_img)
+		VALUES(\"{$arr['name']}\", \"{$arr['price']}\", \"{$arr['colour']}\",  \"{$arr['quantity']}\", \"{$arr['sexe']}\", \"{$arr['category']}\", \"{$arr['path_img']}\")";
 
 	if (mysqli_query($serv, $val)) {
 		echo "New record created successfully";
