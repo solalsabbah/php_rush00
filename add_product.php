@@ -2,7 +2,7 @@
 
 $db = "rush00";
 
-$serv = mysqli_connect(null, $SQLlogin, $SQLpass, null, 0, '/Users/ssabbah/goinfre/mysql/tmp/mysql.sock'); // connecte au serveur
+$serv = mysqli_connect("192.168.99.100", $SQLlogin, $SQLpass); // connecte au serveur
 
 if (!$serv)
 {

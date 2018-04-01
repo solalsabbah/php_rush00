@@ -1,16 +1,16 @@
 <?php
 function get_category() {
-include('../rush_sql/admin/config.php');
+include("config.php");
 
 	$db = "rush00";
-
-	$serv = mysqli_connect(null, $SQLlogin, $SQLpass, null, 0, '/Users/ssabbah/goinfre/mysql/tmp/mysql.sock');
+	
+	$serv = mysqli_connect($server, $SQLlogin, $SQLpass);
 
 	$cat = array();
 	if (mysqli_select_db($serv, "rush00")) // Connect to my database
 	{
 
-		$sql_table = "SELECT category FROM products";
+		$sql_table = "SELECT category FROM PRODUCTS";
 		$result = mysqli_query($serv, $sql_table);
 
 		while ($row = (mysqli_fetch_assoc($result)))
@@ -23,50 +23,50 @@ include('../rush_sql/admin/config.php');
 }
 		function create_foldpasswd()
 		{
-			if (!file_exists("../private"))
+			if (!file_exists("./private"))
 			{
 				$_SESSION["logged_on_user"] = "";
-				mkdir("../private");
+				mkdir("./private");
 			}
-			if (!file_exists("../private/passwd"))
+			if (!file_exists("./private/passwd"))
 			{
-				file_put_contents("../private/passwd", NULL);
+				file_put_contents("./private/passwd", NULL);
 				$_SESSION["logged_on_user"] = "";
 			}
 		}
 		create_foldpasswd();
 	?>
 <header>
-	<a href="<?= _PATH_ ?>"><img id="logo" src="<?= _PATH_ ?>img/logo.png"></a>
+	<a href="./"><img id="logo" src="./logo.png"></a>
 	<div id="login">
 		<?= (isset($_SESSION["logged_on_user"]))?$_SESSION["logged_on_user"]:""; ?>
 	</div>
 	<div class="bandeau">
 		<div class="perso">
-			<div class="deroulant link effects" onClick='location.href="<?= _PATH_ ?>account/panier.php"'>Panier</div>
+			<div class="deroulant link effects" onClick='location.href="./panier.php"'>Panier</div>
 			<div class="deroulant link effects">
-				<a href= "<?= _PATH_ ?>account">Compte</a>
+				<a href= "./">Compte</a>
 				<div class="hidden" style="margin-top: 36px;">
 					<?php 
 					if (!isset($_SESSION["logged_on_user"]) || ($_SESSION && isset($_SESSION["logged_on_user"]) && $_SESSION["logged_on_user"] === ""))
 					{
 					?>
-					<div class="link" onClick='location.href="<?= _PATH_ ?>account/create_account_page.php"'>Inscription</div>
-					<div class="link" onClick='location.href="<?= _PATH_ ?>account/login.php"'>Connexion</div>
+					<div class="link" onClick='location.href="./create_account_page.php"'>Inscription</div>
+					<div class="link" onClick='location.href="./login.php"'>Connexion</div>
 					<?php 
 					} 
 					else
 					{
 					?>
-					<div class="link" onClick='location.href="<?= _PATH_ ?>account/manage_account.php"'>Compte</div>
-					<div class="link" onClick='location.href="<?= _PATH_ ?>account/logout.php"'>Déconnexion</div>
+					<div class="link" onClick='location.href="./manage_account.php"'>Compte</div>
+					<div class="link" onClick='location.href="./logout.php"'>Déconnexion</div>
 					<?php
 					}
 					?>
 					<!-- <?php //if (isset($_SESSION["logged_on_user"]) && $_SESSION["logged_on_user"] === "admin") 
 					{
 					?> -->
-					<div class="link" onClick='location.href="<?= _PATH_ ?>account/admin.php"'>Administrateur</div>
+					<div class="link" onClick='location.href="./admin.php"'>Administrateur</div>
 					<!-- <?php
 					}
 					?> -->
@@ -82,13 +82,13 @@ include('../rush_sql/admin/config.php');
 				$value = $cat[$a];
 				?>
 				<div class="deroulant left effects">
-				<div class="link" onClick="self.location.href='<?= _PATH_ ?>cat_1/'"><?= "salut" ?></div>
+				<div class="link" onClick="self.location.href='./'"><?= "salut" ?></div>
 					<div class="hidden linkmenu">
 					<?php
 					for ($souscat = 0; $souscat < 3; $souscat++)
 					{
 						?>
-						<div class="link leftlink" onClick='self.location.href="<?= _PATH_ ?>cat_1/sous_cat_1.php"'><?= "SOUS_CAT" ?></div>
+						<div class="link leftlink" onClick='self.location.href="./sous_cat_1.php"'><?= "SOUS_CAT" ?></div>
 						<?php
 					}
 				 	?>

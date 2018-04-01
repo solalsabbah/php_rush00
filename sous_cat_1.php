@@ -2,12 +2,11 @@
 <head>
 	<meta charset="utf-8" />
 	<title>Site e-Commerce</title>
-	<link rel="stylesheet" type="text/css" href="http://192.168.99.100:8100/php_rush00/style.css">
+	<link rel="stylesheet" type="text/css" href="./style.css">
 </head>
 <body>
 <?php
-define("_PATH_", "../");
-include(_PATH_.'/static/header.php'); ?>
+include('./header.php'); ?>
 <div class="main">
 	<div class="criteria box">
 		<form>
@@ -35,7 +34,7 @@ include(_PATH_.'/static/header.php'); ?>
 	while ($i < 100) // Ici, inserer la base de donnees des produits selon les criteres (Remplacer le i par l'index des produits)
 	{
 		?>
-		<div class="article box"><img class="img_product" src="../img/logo.png">
+		<div class="article box"><img class="img_product" src="./logo.png">
 			<div class="name"><?php echo "Article"?></div>
 			<div class="price"><?php echo "50$"?></div>
 		</div>
@@ -44,6 +43,6 @@ include(_PATH_.'/static/header.php'); ?>
 	}
 ?>
 </div>
-<?php include('../static/footer.html'); ?>
+<?php include('./footer.html'); ?>
 </body>
 </html>

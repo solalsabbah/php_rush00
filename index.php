@@ -9,9 +9,8 @@ session_start();
 <body>
 
 <?php
-define(_PATH_, "./");
-include(_PATH_.'/static/header.php'); ?>
-<img src="./img/main_img.jpg" class="main_img"/>
-<?php include('./static/footer.html'); ?>
+include('header.php'); ?>
+<img src="./main_img.jpg" class="main_img"/>
+<?php include('./footer.html'); ?>
 </body>
 </html>

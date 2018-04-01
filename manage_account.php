@@ -49,12 +49,11 @@ function del_usr()
 <head>
 	<meta charset="utf-8" />
 	<title>Gestion de compte</title>
-	<link rel="stylesheet" type="text/css" href="http://192.168.99.100:8100/php_rush00/style.css">
+	<link rel="stylesheet" type="text/css" href="./style.css">
 </head>
 <body>
 <?php
-define("_PATH_", "../");
-include(_PATH_.'/static/header.php');
+include('./header.php');
 ?>
 <?= (isset(array_keys($_GET)[0]) AND (array_keys($_GET)[0] == "success"))?"<h2 style='text-align: center; color: green;'>Mot de passe modifié.</h2>":"" ?>
 	<div class="box log">
@@ -76,6 +75,6 @@ if (isset($_POST['submit']) && $_POST['submit'] == "OK" && isset($_POST['oldpw']
 	modify_pw();
 if (isset($_POST['submit']) && $_POST['submit'] == "Supprimer le compte")
 	del_usr();
-include('../static/footer.html'); ?>
+include('./footer.html'); ?>
 </body>
 </html>

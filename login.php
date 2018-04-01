@@ -2,12 +2,11 @@
 <head>
 	<meta charset="utf-8" />
 	<title>Connexion</title>
-	<link rel="stylesheet" type="text/css" href="http://192.168.99.100:8100/php_rush00/style.css">
+	<link rel="stylesheet" type="text/css" href="./style.css">
 </head>
 <body>
 <?php
-define("_PATH_", "../");
-include(_PATH_.'/static/header.php'); ?>
+include('./header.php'); ?>
 	<div class="box log">
 		<h1>Connexion</h1>
 		<br />
@@ -22,6 +21,6 @@ include(_PATH_.'/static/header.php'); ?>
 			<input type="submit" class="effects" id="button" name="submit" value="Valider" />
 		</form>
 	</div>
-	<?php include('../static/footer.html'); ?>
+	<?php include('./footer.html'); ?>
 </body>
 </html>

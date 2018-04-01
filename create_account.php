@@ -1,14 +1,14 @@
 <?php
 	function create_foldpasswd()
 	{
-		if (!file_exists("../private"))
-			mkdir("../private");
-		if (!file_exists("../private/passwd"))
-			file_put_contents("../private/passwd", NULL);
+		if (!file_exists("./private"))
+			mkdir("./private");
+		if (!file_exists("./private/passwd"))
+			file_put_contents("./private/passwd", NULL);
 	}
 	create_foldpasswd();
 	$login_def = isset($_POST["login"]);
-	if ($login_def && ($content = file_get_contents("../private/passwd")))
+	if ($login_def && ($content = file_get_contents("./private/passwd")))
 	{
 		$final = unserialize($content);
 		foreach ($final as $key => $value) {
@@ -27,7 +27,7 @@
 		$to_compr["passwd"] = hash("whirlpool", $_POST["passwd"]);
 		$final[] = $to_compr;
 		$seria = serialize($final);
-		if (file_put_contents("../private/passwd", $seria))
+		if (file_put_contents("./private/passwd", $seria))
 			header('location: ./login.php');
 	}
 	else

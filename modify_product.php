@@ -1,4 +1,4 @@
-<?PHP include('admin/config.php');
+<?PHP include('./config.php');
 
 $db = "rush00";
 

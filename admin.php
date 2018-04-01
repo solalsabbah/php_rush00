@@ -52,12 +52,11 @@ function check_opt()
 <head>
 	<meta charset="utf-8" />
 	<title>Espace Administrateur</title>
-	<link rel="stylesheet" type="text/css" href="http://192.168.99.100:8100/php_rush00/style.css">
+	<link rel="stylesheet" type="text/css" href="./style.css">
 </head>
 <body>
 <?php
-define("_PATH_", "../");
-include(_PATH_.'//static/header.php'); ?>
+include('./header.php'); ?>
 	<h1 class="title_adm">Section administrateur</h1>
 	<form class="form_adm" method="POST" action="admin.php">
 		<select name="opt">
@@ -71,6 +70,6 @@ include(_PATH_.'//static/header.php'); ?>
 	<?php
 	check_opt();
 	?>
-<?php include('../static/footer.html'); ?>
+<?php include('./footer.html'); ?>
 </body>
 </html>

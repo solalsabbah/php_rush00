@@ -6,8 +6,7 @@
 </head>
 <body>
 <?php
-define("_PATH_", "../");
-include(_PATH_.'//static/header.php'); ?>
+include('./header.php'); ?>
 	<div class="box log">
 		<h1>Inscription</h1>
 		<br />
@@ -22,6 +21,6 @@ include(_PATH_.'//static/header.php'); ?>
 			<input type="submit" class="effects" id="button" name="submit" value="Valider" />
 		</form>
 	</div>
-	<?php include('../static/footer.html'); ?>
+	<?php include('./footer.html'); ?>
 </body>
 </html>

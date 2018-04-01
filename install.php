@@ -1,10 +1,10 @@
 <?php
 
-include('admin/config.php');
+include('config.php');
 
 $db = "rush00";
 
-$serv = mysqli_connect(null, $SQLlogin, $SQLpass, null, 0, '/Users/ssabbah/goinfre/mysql/tmp/mysql.sock'); // connecte au serveur
+$serv = mysqli_connect($server, $SQLlogin, $SQLpass); // connecte au serveur
 
 if (!$serv) 
 {
