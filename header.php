@@ -75,20 +75,21 @@ include("config.php");
 		</div>
 		<div class="menu">
 			<?php
-			include("get_category.php");
 					$cat = get_category();
 			for ($a = 0; isset($cat[$a]); $a++) // parcourir la table sql chopper toutes les sexe 
 			{
 				$value = $cat[$a];
 				?>
 				<div class="deroulant left effects">
-				<div class="link" onClick="self.location.href='./'"><?= $value ?></div>
+				<div class="link" onClick="self.location.href='./'"><a><?= $value ?></a></div>
 					<div class="hidden linkmenu">
 					<?php
 					for ($souscat = 0; $souscat < 3; $souscat++)
 					{
-						?>
-						<div class="link leftlink" onClick='self.location.href="./sous_cat_1.php"'><?= "SOUS_CAT" ?></div>
+?>	
+						<form method="POST" action="sous_cat_1.php">
+						<div class="link leftlink" onClick='self.location.href="./sous_cat_1.php?category=<?= $value ?>"'><?= $value ?></div>
+						</form>
 						<?php
 					}
 				 	?>

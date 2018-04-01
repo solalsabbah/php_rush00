@@ -10,10 +10,6 @@ if (!$serv)
 	exit();
 }
 
-//printf("Information sur le serveur : %s\n", mysqli_get_host_info($serv));
-
-//$name = mysql_real_escape_string($_POST['name']); // verifie que le produit n est pas une injection SQL
-
 
 $ok = 0;
 if ($_POST['submit'] == "OK") 
