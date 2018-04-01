@@ -2,6 +2,7 @@
 	<head>
 		<meta charset="utf-8" />
 		<title>Formulaire</title>
+		<link rel="stylesheet" type="text/css" href="./style.css">
 		<style>
 .centre
 {
@@ -14,6 +15,8 @@ body
 		</style>
 	</head>
 	<body >
+		<?php include('./header.php'); ?>
+
 		<form method="post" action="add_product.php">
 			<fieldset>
 				<div class="centre">

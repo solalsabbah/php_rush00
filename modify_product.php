@@ -2,7 +2,7 @@
 
 $db = "rush00";
 
-$serv = mysqli_connect(null, $SQLlogin, $SQLpass, null, 0, '/Users/ssabbah/goinfre/mysql/tmp/mysql.sock'); // connecte au serveur
+$serv = mysqli_connect($server, $SQLlogin, $SQLpass); // connecte au serveur
 
 if (!$serv)
 {
@@ -21,7 +21,7 @@ if (!mysqli_select_db($serv, "rush00")) // Connect to my database
 	echo "Connected to table";
 }
 
-$sql_table = "SELECT * FROM products";
+$sql_table = "SELECT * FROM PRODUCTS";
 
 $result = mysqli_query($serv, $sql_table)or die(mysqli_error($serv));
 
@@ -33,6 +33,14 @@ elseif (isset($_GET) && isset($_GET['answer']) && $_GET['answer'] == "fail")
 	echo "Le produit n'a pas pu etre modifie";
 ?>
 
+<html>
+<head>
+	<title>Modification du produit</title>
+	<link rel="stylesheet" type="text/css" href="./style.css">
+
+</head>
+<body>
+<?php include('./header.php'); ?>
 
 
 <table>
@@ -68,7 +76,8 @@ while($row = mysqli_fetch_array($result))
 
 ?>
 </table>
-
+</body>
+</html>
 <?PHP
 
 if (preg_match("#^[0-9]{1,8}$#", $_POST['id_product']) && $_POST['submit'] == "OK")

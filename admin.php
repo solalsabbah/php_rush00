@@ -45,6 +45,14 @@ function check_opt()
 			del_usr();
 		}
 	}
+	if ((isset($_POST) && isset($_POST['opt']) && $_POST['opt'] === "ajout"))
+	{
+		header('location: new_prod.php');
+	}
+	if ((isset($_POST) && isset($_POST['opt']) && $_POST['opt'] === "modif_prod"))
+	{
+		header('location: modify_product.php');
+	}
 }
 ?>
 
@@ -61,10 +69,10 @@ include('./header.php'); ?>
 	<form class="form_adm" method="POST" action="admin.php">
 		<select name="opt">
 			<option value="users">Gestion Utilisateurs</option>
-			<option value="produits">Gestion des produits</option>
-			<option value="categories">Gestion des catégories</option>
-			<option value="commandes">Commandes passées</option>
-		</select>
+			<option value="ajout">Ajouter un produit</option>
+			<option value="modif_prod">Modifier des produits</option>
+<!-- 			<option value="suppression">Supprimer un produit</option>
+ -->		</select>
 		<input type="submit" value="OK"/>
 	</form>
 	<?php

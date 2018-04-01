@@ -1,7 +1,7 @@
 <?php
 function auth($login, $passwd)
 {
-	if ($content = file_get_contents("../private/passwd"))
+	if ($content = file_get_contents("./private/passwd"))
 	{
 		if ($unser = unserialize($content))
 		{

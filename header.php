@@ -82,7 +82,7 @@ include("config.php");
 				$value = $cat[$a];
 				?>
 				<div class="deroulant left effects">
-				<div class="link" onClick="self.location.href='./'"><?= "salut" ?></div>
+				<div class="link" onClick="self.location.href='./'"><?= $value ?></div>
 					<div class="hidden linkmenu">
 					<?php
 					for ($souscat = 0; $souscat < 3; $souscat++)
